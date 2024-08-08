@@ -1,0 +1,70 @@
+:root {
+    --Green: #11581A;
+    --yellow: #C0FF06;
+    --pink: #F0B1E9;
+    --purple: #5B0075;
+    --red: #7C000C;
+    --gray: #F3F3F1;
+}
+
+.Page3CardanimationParent{
+    position: relative;
+    top: 0;
+    height: 60vh;
+    width: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minicards {
+    height: 250px;
+    width: 250px;
+    display: inline-block;
+    margin: 10px;
+    background-color: var(--gray); /* Default color */
+    border-radius: 2rem;
+    padding: 1rem;
+    position: absolute;
+}
+
+.minicards:nth-child(1) {
+    background-color: var(--Green);
+}
+
+.minicards:nth-child(2) {
+    background-color: var(--yellow);
+}
+
+.minicards:nth-child(3) {
+    background-color: var(--pink);
+}
+
+.minicards:nth-child(4) {
+    background-color: var(--purple);
+}
+
+/* Repeat the pattern */
+.minicards:nth-child(5) {
+    background-color: var(--Green);
+}
+
+.minicards:nth-child(6) {
+    background-color: var(--gray);
+}
+
+.profilephoto{
+    height: 60px;
+    width: 60px;
+}
+.linktreesubsection{
+    height: 3rem;
+    width: 9rem;
+    border-radius: 1.5rem;
+    background-color: #F3F3F1;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    top: 80%;
+}

@@ -1,0 +1,226 @@
+:root{
+    --Green: #11581A;
+    --yellow: #C0FF06;
+    --pink: #F0B1E9;
+    --purple: #5B0075;
+    --red:#7C000C;
+    --gray: #F3F3F1;
+}
+h1{
+    font-size: 4.8rem;
+    font-family: "Linik Sans Black", "Arial Black", Arial, sans-serif;
+    line-height: 4.8rem;
+    color: var(--yellow);
+    letter-spacing: -2px;
+}
+.firstPageContent ,.secondPageContent, .thirdPageContent, .fourthPageContent{
+    margin-top: 14rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.firstPage{
+    background-color: var(--Green);
+    width: 100%;
+    height: 115vh;
+    display: block;
+    padding: 2rem;
+}
+.firstPageContentText, .firstPageContentImage, .secondPageContentText, .secondPageContentImage, .thirdPageContentText ,.thirdPageContentImage,.fourthPageContentText,.fourthPageContentImage{
+    flex: 1;
+}
+.firstPageContentText p,.secondPageContentText p{
+    margin-top: 2rem;
+    color: var(--yellow);
+}
+.firstPageContentText .claimyourlinktree_btn{
+    background-color: #F0B1E9;
+}
+.secondPage{
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--pink);
+    padding: 2rem;
+    height: 115vh;
+}
+.secondPageContent{
+    margin-top: 0;
+}
+.secondPageContentText p , .secondPageContentText h2{
+    color: var(--purple) !important;
+    margin-left: 0;
+    text-align: start;
+    width: 90%;
+}
+.secondPage .btn{
+    width: 12rem;
+    background-color: var(--purple);
+}
+.thirdPage{
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--gray);
+    padding: 2rem;
+    height: 115vh;
+}
+.thirdPageContentText p , .thirdPageContentText h2{
+    color: #201F30;
+    text-align: start;
+    margin-top: 1rem;
+    width: 92%;
+}
+.thirdPage .btn{
+    width: 12rem;
+    background-color: var(--pink);
+    color: black;
+}
+.thirdPageContent{
+    margin-top: 0;
+}
+
+
+
+
+.fourthPage{
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--red);
+    padding: 2rem;
+    height: 115vh;
+}
+.fourthPageContentText p , .fourthPageContentText h2{
+    color: var(--pink);
+    text-align: start;
+    margin-top: 1rem;
+    width: 92%;
+}
+.fourthPage .btn{
+    width: 12rem;
+    background-color: var(--pink);
+    color: black;
+}
+.fourthPageContent{
+    margin-top: 0;
+}
+.fourthPageContentImage .content{
+    position: relative;
+    height: 100%;
+}
+.col1card1{
+    position: relative;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .flipcardBack {
+    transform: rotateY(180deg);
+  }
+  .WidgetCardFlipParent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .row {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    margin-bottom: 15px;
+  }
+  .row1{
+    gap: 15px;
+  }
+  
+  .cardCont {
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .smallCard {
+    width: 100px;
+    height: 155px;
+  }
+  .smallCard img{
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .wideCard {
+    width: 250px;
+    height: 150px;
+  }
+  .wideCard img{
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .flipcardFront, .flipcardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+.pageFive{
+    height: 115vh;
+    width: 100%;
+    display: block;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+.pageFive h2{
+    color: #201F30;
+}
+.pageFiveText{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    height: 10rem;
+}
+.text {
+    width: max-content;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* left: 50%; */
+    /* margin-left: -225px; */
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    text-align: center;
+    /* width: fit-content;*/
+    color: blue;
+  }
+  .text h2{
+    color: blue;
+  }
+  
+  .word {
+    position: absolute;
+    opacity: 1; /* Ensure it's fully visible */
+  }
+
+.pagefiveScroller{
+    margin-top: 2rem;
+    height: 60%;
+    background-color: #11581A;
+    width: 100%;
+}

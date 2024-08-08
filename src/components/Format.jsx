@@ -3,7 +3,7 @@ import "../css/format.css";
 import logo from "../assets/logo.svg";
 import "../assets/linik-sans-cufonfonts-webfont/style.css";
 
-const format = () => {
+const format = ({ children }) => {
   return (
     <>
       <nav className="navbar">
@@ -37,7 +37,7 @@ const format = () => {
         </span>
       </nav>
       <main>
-        {Children}
+        {children}
       </main>
       <footer>
         <span className="footerHedding">
