@@ -1,37 +1,45 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "../css/firstpage.css";
+import Page5flipcard from "./Page5flipcard";
 
-const words = ["DJs.", "creators.", "musicians.", "artists.", "writers.", "photographers.", "designers."];
+gsap.registerPlugin(ScrollToPlugin);
 
 const PageFive = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const wordRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Slide out the current word
-      gsap.to(wordRef.current, {
-        y: 10, // Slide out to bottom
-        opacity: 0,
-        duration: 0.1,
-        onComplete: () => {
-          // Change the word after the slide-out animation
-          setCurrentWordIndex((prevIndex) =>
-            prevIndex === words.length - 1 ? 0 : prevIndex + 1
-          );
+    const container = containerRef.current;
 
-          // Slide in the new word from the top
-          gsap.fromTo(
-            wordRef.current,
-            { y: -10, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5 }
-          );
-        },
+    if (container) {
+      const scrollWidth = container.scrollWidth; // Total width to scroll
+
+      // Define the number of steps and step width
+      const numSteps = 10; // Number of scroll steps
+      const stepWidth = scrollWidth / numSteps; // Width of each scroll step
+
+      // Create a GSAP timeline
+      const timeline = gsap.timeline({
+        repeat: -1, // Repeat indefinitely
+        ease: "none",
       });
-    }, 4000);
 
-    return () => clearInterval(interval);
+      // Add scroll animations for each step
+      for (let i = 0; i < numSteps; i++) {
+        timeline.to(container, {
+          scrollTo: { x: (i + 1) * stepWidth, autoKill: false },
+          duration: 3, // Duration for each scroll step
+        });
+      }
+
+      // Optionally add a pause between scroll steps
+      timeline.to(container, {
+        scrollTo: { x: stepWidth * numSteps, autoKill: false },
+        duration: 0, // No duration for the pause
+        delay: 0, // Delay before restarting the loop
+      });
+    }
   }, []);
 
   return (
@@ -39,14 +47,20 @@ const PageFive = () => {
       <div className="pageFiveText">
         <h2>The only link in bio trusted by 50M+</h2>
         <div className="text">
-          <span className="word" ref={wordRef}>
-            <h2>{words[currentWordIndex]}</h2>
+          <span className="word">
+            <h2>Content goes here</h2>
           </span>
         </div>
       </div>
       <div className="pagefiveScroller">
-        <div className="page5card">
-            
+        <div className="page5card" ref={containerRef}>
+          <Page5flipcard
+            frontImage="https://picsum.photos/id/237/200/300"
+            backText="This is the back side."
+            backColor="#f0f0f0"
+            width="500px"
+            borderrad="2rem"
+          />
         </div>
       </div>
     </span>

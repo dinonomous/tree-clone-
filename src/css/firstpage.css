@@ -6,6 +6,9 @@
     --red:#7C000C;
     --gray: #F3F3F1;
 }
+body{
+  overflow-x: hidden;
+}
 h1{
     font-size: 4.8rem;
     font-family: "Linik Sans Black", "Arial Black", Arial, sans-serif;
@@ -145,7 +148,7 @@ h1{
   
   .cardCont {
     position: relative;
-    perspective: 1000px;
+    perspective: 100000px;
   }
   
   .smallCard {
@@ -221,6 +224,444 @@ h1{
 .pagefiveScroller{
     margin-top: 2rem;
     height: 60%;
-    background-color: #11581A;
     width: 100%;
+}
+.page5card{
+  height: 100%;
+  overflow-x: hidden;
+}
+.title {
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  color: #444;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.wrapper-container {
+  width: fit-content;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.cards-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.card-item {
+  min-width: fit-content;
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  cursor: pointer;
+  height: 100%;
+}
+
+.flip-container {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+          height: 100%;
+}
+
+.flip-front,
+.flip-back {
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+  border-radius: 10px;
+  background-position: center;
+  -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  text-align: center;
+  min-height: 280px;
+  height: auto;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+.flip-back {
+  height: 100%;
+}
+
+.flip-container:hover .flip-front,
+.flip-container:hover .flip-back {
+  -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  height: 100%;
+}
+
+.flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-inner {
+  -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+          transform: translateY(-50%) translateZ(60px) scale(0.94);
+  top: 50%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: 1px solid transparent;
+  -webkit-perspective: inherit;
+          perspective: inherit;
+  z-index: 2;
+  height: 100%;
+}
+
+.flip-container .flip-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          height: 100%;
+}
+
+.flip-container .flip-front {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          height: 100%;
+}
+
+.flip-container:hover .flip-back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          height: 100%;
+}
+
+.flip-container:hover .flip-front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          height: 100%;
+}
+
+.flip-front .flip-inner p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  height: fit-content;
+  padding: 10px;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  color: black;
+
+}
+
+.flip-front .flip-inner p:after {
+  content: '';
+  width: 4rem;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  background-color: #fff;
+  transform: translateX(-50%);
+}
+
+.flip-front .flip-inner h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.flip-back .flip-inner h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.flip-back .flip-inner p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  height: fit-content;
+  height: 3rem;
+  border-radius: 1.5rem;
+  background-color: white;
+  color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card-item {
+    width: calc(50% - 2rem);
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-item {
+    width: calc(100% - 2rem);
+    height: 100%;
+  }
+}
+
+.pageSix{
+  height: 120vh;
+  background-color: var(--gray);
+  display: block;
+  padding: 2rem;
+}
+.pageSixParent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+}
+.pagesixLeft, .pagesixRight{
+  width: 50%;
+  height: 100%;
+}
+.pagesixLeft{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.pagesixContainerLeft:nth-child(1){
+  background-color: var(--pink);
+}
+.pagesixContainerLeft:nth-child(2){
+  background-color: var(--yellow);
+}
+.pagesixContainerLeft{
+  position: relative;
+  height: 50%;
+  flex: 1;
+  width: 100%;
+  border-radius: 2rem;
+}
+.pagesixRight{
+  background-color: var(--red);
+  border-radius: 2rem;
+  position: relative;
+  display: flex;
+}
+.pagesixRight img{
+  width: 80%;
+  object-fit: contain;
+  margin-left: 5rem;
+  margin-top: -6rem;
+}
+.pagesixRight a{
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  width: 80%;
+  font-size: 2rem;
+  font-family: "Linik Sans Normal", "Arial Black", Arial, sans-serif;
+  color: var(--pink);
+}
+.pagesixContainerLeft a{
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  width: 80%;
+  font-size: 2rem;
+  font-family: "Linik Sans Normal", "Arial Black", Arial, sans-serif;
+  color: #201F30;
+}
+
+
+.pageSeve{
+  padding-top: 4rem;
+  display: block;
+  background-color: var(--gray);
+  height: 120vh;
+  width: 100%;
+}
+.pageSeve .btn{
+  width: 12rem;
+  margin-top: 8rem;
+  background-color: var(--pink);
+  color: black;
+}
+.page6Cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 100%;
+  gap: 3%;
+  margin-top: 8rem;
+}
+.page6Card{
+  height: 100%;
+  width: 28%;
+  background-color: #fff;
+  border-radius: 2rem;
+  position: relative;
+}
+.page6Card p{
+  position: absolute;
+  bottom: 3rem;
+  width: 100%;
+  text-align: center;
+  padding: 0rem 2rem 0rem 2rem;
+  color: black;
+}
+.FeaturePage{
+  background-color: var(--gray);
+}
+.featurepageDivisions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: fit-content;
+  padding: 0rem 2rem 0rem 2rem;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+}
+.devision{
+  background-color: white;
+  width: 18rem;
+  height: 6rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.devision img{
+  height: 40%;
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 130vh;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  gap: 4rem;
+  background-color: var(--gray);
+}
+
+.slider-image {
+  width: 65%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.slider-buttons {
+  bottom: 20px;
+  width: fit-content;
+  display: flex;
+  gap: 2rem;
+  padding: 0 20px;
+  
+}
+.slider-buttons button{
+  border-radius: 0.8rem;
+  border: 1px solid black;
+}
+
+.slider-content h2{
+  width: 80%;
+}
+
+.slider-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown-container {
+  background-color: #490000; /* Adjust to match the color scheme */
+  border-radius: 2rem;
+  margin-bottom: 10px;
+  overflow: hidden;
+  width: 50rem;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;  
+  height: 7rem;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-body {
+  padding: 15px;
+  background-color: #490000; /* Adjust to match the color scheme */
+  color: var(--pink);
+  font-size: 1.2rem;
+  padding: 2rem;
+  font-family: "Linik Sans", "Arial Black", Arial, sans-serif;
+}
+.dropdown-page{
+  min-height: 120vh;
+  height: fit-content;
+  padding: 4rem;
+  padding-bottom: 6rem;
+  background-color: #71000b;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.dropdown-page p{
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
+.dropdown-page h2{
+  color: var(--pink);
+  font-size: 3.8rem;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
 }
