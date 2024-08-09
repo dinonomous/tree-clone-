@@ -10,6 +10,7 @@ import PageSeven from '../components/PageSeven'
 import FeaturePage from '../components/FeaturePage'
 import AuthorPage from '../components/AuthorPage'
 import DropdownPage from '../components/DropdownPage'
+import '../App.css'
 
 const HomePage = () => {
     return (

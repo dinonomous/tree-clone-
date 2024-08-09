@@ -32,7 +32,9 @@ const format = ({ children }) => {
             </ul>
           </div>
           <div className="authdiv">
-            <button className="login btn">Log in</button>
+            <Link to="/Login">
+              <button className="login btn">Log in</button>
+            </Link>
             <button className="signup btn">Sign up free</button>
           </div>
         </span>
@@ -163,9 +165,9 @@ const format = ({ children }) => {
           </div>
           <div className="fotterlistContactup">
             <div className="fotterlistContactupLogin">
-              <Link to="/Login">
-                <button className="login btn">Log in</button>
-              </Link>
+                <Link to="/Login">
+                  <button className="login btn">Log in</button>
+                </Link>
               <button className="signup btn">Get started for free</button>
             </div>
             <div className="fotterlistContactupSocialMedia">

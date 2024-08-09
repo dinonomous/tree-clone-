@@ -27,7 +27,7 @@
     background-color: white;
   }
   
-  .logo {
+  .login-container .logo {
     position: fixed;
     top: 2rem;
     left: 2rem;
@@ -35,18 +35,18 @@
     margin-bottom: 20px;
   }
   
-  h1 {
+  .login-container h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: black;
   }
   
-  p {
+  .login-container p {
     font-size: 1.2em;
     margin-bottom: 20px;
   }
   
-  form {
+  .login-container form {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@
     max-width: 400px;
   }
   
-  form input {
+  .login-container form input {
 
     margin-bottom: 15px;
     padding: 10px;
@@ -66,7 +66,7 @@
     background-color: rgba(128, 128, 128, 0.278);
   }
   
-  form .login-button {
+  .login-container form .login-button {
     padding: 10px;
     background-color: #6a0dad;
     color: white;
@@ -85,7 +85,7 @@
     text-align: center;
   }
   
-  .links a {
+  .login-container .links a {
     color: #6a0dad;
     text-decoration: none;
   }
@@ -114,11 +114,11 @@
     border-radius: 1.5rem;
   }
   
-  .google-login {
+  .login-container .google-login {
     background-color: white;
   }
   
-  .apple-login {
+  .login-container .apple-login {
     background-color: black;
     color: white;
   }
@@ -163,7 +163,7 @@
   }
   
 
-  button img {
+  .login-container button img {
     width: 2rem;
     padding-right:5px;
     border-radius: 50%;
