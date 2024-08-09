@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import "../css/format.css";
 import logo from "../assets/logo.svg";
 import "../assets/linik-sans-cufonfonts-webfont/style.css";
