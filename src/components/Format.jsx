@@ -1,10 +1,32 @@
-import React, { Children } from "react";
+import React, { Children, useState } from "react";
 import "../css/format.css";
 import logo from "../assets/logo.svg";
 import "../assets/linik-sans-cufonfonts-webfont/style.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const format = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if a token exists in local storage
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await fetch("https://authentication-dineshwar.vercel.app/auth/logout", {
+        method: "GET",
+        credentials: "include", // Include cookies if needed
+      });
+      localStorage.removeItem("token"); // Remove token from local storage
+      setIsAuthenticated(false); // Update state
+      window.location.href = "/"; // Redirect to home page or desired route
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -32,16 +54,24 @@ const format = ({ children }) => {
             </ul>
           </div>
           <div className="authdiv">
-            <Link to="/Login">
-              <button className="login btn">Log in</button>
-            </Link>
-            <button className="signup btn">Sign up free</button>
+            {isAuthenticated ? (
+              <button className="logout btn" onClick={handleLogout}>
+                Log out
+              </button>
+            ) : (
+              <>
+                <Link to="/login">
+                  <button className="login btn">Log in</button>
+                </Link>
+                <Link to="/signup">
+                  <button className="signup btn">Sign up free</button>
+                </Link>
+              </>
+            )}
           </div>
         </span>
       </nav>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <footer>
         <span className="footerHedding">
           <div className="footerHeaddingText">
@@ -165,9 +195,9 @@ const format = ({ children }) => {
           </div>
           <div className="fotterlistContactup">
             <div className="fotterlistContactupLogin">
-                <Link to="/Login">
-                  <button className="login btn">Log in</button>
-                </Link>
+              <Link to="/Login">
+                <button className="login btn">Log in</button>
+              </Link>
               <button className="signup btn">Get started for free</button>
             </div>
             <div className="fotterlistContactupSocialMedia">
@@ -198,13 +228,16 @@ const format = ({ children }) => {
           </div>
         </span>
         <span className="LinktreeBanner">
-          <h5>
-            Linktree
-          </h5>
+          <h5>Linktree</h5>
           <img src={logo} alt="" />
         </span>
         <span className="footerText">
-          <p>We acknowledge the Traditional Custodians of the land on which our office stands, The Wurundjeri people of the Kulin Nation, and pay our respects to Elders past, present and emerging. Linktree Pty Ltd (ABN 68 608 721 562), 1-9 Sackville st, Collingwood VIC 3066</p>
+          <p>
+            We acknowledge the Traditional Custodians of the land on which our
+            office stands, The Wurundjeri people of the Kulin Nation, and pay
+            our respects to Elders past, present and emerging. Linktree Pty Ltd
+            (ABN 68 608 721 562), 1-9 Sackville st, Collingwood VIC 3066
+          </p>
         </span>
       </footer>
     </>
