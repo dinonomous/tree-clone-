@@ -178,6 +178,10 @@ h4{
     justify-content: end;
     gap: 0.5rem;
 }
+.fotterlistContactupSocialMedia a{
+    text-decoration: none;
+    color: white;
+}
 .btn_round{
     height: 4rem;
     width: 4rem;
@@ -210,4 +214,7 @@ h4{
     width: 60%;
     color: #F0B1E9 !important;
     margin-top: 10rem;
+}
+nav p{
+    margin-bottom: 0;
 }

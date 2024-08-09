@@ -1,32 +1,18 @@
-import './App.css'
-import Format from './components/Format'
-import PageOne from './components/PageOne'
-import Pagetwo from './components/Pagetwo'
-import PageThree from './components/PageThree'
-import PageFour from './components/PageFour'
-import PageFive from './components/PageFive'
-import PageSix from './components/PageSix'
-import PageSeven from './components/PageSeven'
-import FeaturePage from './components/FeaturePage'
-import AuthorPage from './components/AuthorPage'
-import DropdownPage from './components/DropdownPage'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/HomePage';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
 
 function App() {
-
   return (
-    <Format>
-      <PageOne />
-      <Pagetwo />
-      <PageFour />
-      <PageThree />
-      <PageFive />
-      <PageSix />
-      <PageSeven />
-      <FeaturePage />
-      <AuthorPage />
-      <DropdownPage />
-    </Format>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

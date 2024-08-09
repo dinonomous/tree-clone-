@@ -2,6 +2,7 @@ import React, { Children } from "react";
 import "../css/format.css";
 import logo from "../assets/logo.svg";
 import "../assets/linik-sans-cufonfonts-webfont/style.css";
+import { Link } from 'react-router-dom';
 
 const format = ({ children }) => {
   return (
@@ -162,7 +163,9 @@ const format = ({ children }) => {
           </div>
           <div className="fotterlistContactup">
             <div className="fotterlistContactupLogin">
-              <button className="login btn">Log in</button>
+              <Link to="/Login">
+                <button className="login btn">Log in</button>
+              </Link>
               <button className="signup btn">Get started for free</button>
             </div>
             <div className="fotterlistContactupSocialMedia">
